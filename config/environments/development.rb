@@ -38,4 +38,8 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  if File.file?('/.dockerenv')
+    config.web_console.permissions = %w(10.0.0.0/8 172.16.0.0/12 192.168.0.0/16)
+  end
 end
