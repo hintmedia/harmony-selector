@@ -10,29 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20110704030727) do
+ActiveRecord::Schema.define(version: 2011_07_04_030727) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "agreements", force: :cascade do |t|
-    t.string   "version",      limit: 255
-    t.string   "projectname",  limit: 255
-    t.string   "submission",   limit: 255
-    t.string   "method",       limit: 255
-    t.string   "nonowner",     limit: 255
-    t.string   "grant",        limit: 255
-    t.integer  "option"
-    t.string   "outbound",     limit: 255
-    t.string   "media",        limit: 255
-    t.string   "jurisdiction", limit: 255
+  create_table "agreements", id: :serial, force: :cascade do |t|
+    t.string "version", limit: 255
+    t.string "projectname", limit: 255
+    t.string "submission", limit: 255
+    t.string "method", limit: 255
+    t.string "nonowner", limit: 255
+    t.string "grant", limit: 255
+    t.integer "option"
+    t.string "outbound", limit: 255
+    t.string "media", limit: 255
+    t.string "jurisdiction", limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "licenses", force: :cascade do |t|
-    t.string   "spdx",       limit: 255
-    t.string   "name",       limit: 255
+  create_table "licenses", id: :serial, force: :cascade do |t|
+    t.string "spdx", limit: 255
+    t.string "name", limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
